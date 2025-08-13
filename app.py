@@ -161,8 +161,8 @@ def index():
         year = request.form.get('year')
         # 验证数据
         if not title or not year or len(year) > 4 or len(title) > 60:
-            flash('Invalid title or year!')
-            # flash('Invalid input.')  # 显示错误提示
+            #flash('Invalid title or year!')
+            flash('Invalid input.')  # 显示错误提示
             return redirect(url_for('index'))  # 重定向回主页
         # 保存表单数据到数据库
         movie = Movie(title=title, year=year)  # 创建记录
